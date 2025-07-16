@@ -11,7 +11,7 @@ void add(int a, int b) {   //paremeter = int a and b
 }
 
 int main() {
-    add(15, 25);  //argument is passed to the paramerter
+    add(15, 25);  //argument is passed to the paramerter with suitable values
     return 0;
 }
 

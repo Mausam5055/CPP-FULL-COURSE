@@ -29,6 +29,7 @@ int main() {
     add();  //calling the user defind function inside main function
     return 0;  // ✅ Recommended for main(), this return value is different from the 
             // return value of function that we defined and is to written in all codes 
+            // so as to exit from the block 
 }
 
 //The above can also be written as : 
