@@ -14,7 +14,7 @@
 // Function with no argument and no return value:
 //📌 Function: Takes no input from user and returns nothing.
 //👉 It handles everything inside the function.
-// we always call oor user defined functuion inside the main functioin 
+//NOTE:  we always call  user defined functuion inside the main functioin 
 
 #include <iostream>
 using namespace std;
