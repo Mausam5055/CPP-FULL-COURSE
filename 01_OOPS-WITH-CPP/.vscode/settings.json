@@ -2,6 +2,9 @@
     "files.associations": {
         "functional": "cpp",
         "random": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "text_encoding": "cpp",
+        "typeinfo": "cpp"
     }
 }
