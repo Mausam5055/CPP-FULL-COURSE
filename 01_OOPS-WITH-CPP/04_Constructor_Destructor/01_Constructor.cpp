@@ -1,5 +1,7 @@
 // 🔹 What is a Constructor?
-// A constructor is a special function that is automatically called when an object of a class is created. It is used to initialize the object.
+// A constructor is a special function that is automatically 
+//called when an object of a class is created. It is used to 
+//initialize the object.
 
 // Key Points:
 // Has the same name as the class.

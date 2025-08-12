@@ -4,8 +4,8 @@
 using namespace std;
 
 class Student {
-    static int count;   // 🔹 Shared by all objects(static data members)
     int rollNumber;     // 🔸 Unique for each student
+    static int count;   // 🔹 Shared by all objects(static data members)
 
 public:
     // ✅ Constructor called automatically when object is created
@@ -51,4 +51,33 @@ int main() {
 // Roll Number: 102
 // Roll Number: 103
 // Total Students: 3
+
+// Student(int r) is the constructor of the Student class that takes an 
+// integer parameter r.
+
+// Here’s the breakdown:
+
+// Student → The name of the constructor is exactly the same as the class name, 
+// meaning it’s not a normal function but a special one.
+// (int r) → This means the constructor takes one parameter of type int and 
+// stores it in a variable named r.
+
+// Purpose → A constructor runs automatically when you create an object of 
+// the class.
+
+// Example:
+// Student s1(101); // Calls Student(int r) with r = 101
+// In this case:
+
+// 1. rollNumber = r; assigns the given value to the object's rollNumber 
+// variable.
+
+// 2. count++; increments a (probably static) counter of how many Student 
+//objects exist.
+
+// 3. So Student(int r) is a parameterized constructor — it lets you set the 
+// student’s roll number at the moment you create the object.
+
+
+
 
