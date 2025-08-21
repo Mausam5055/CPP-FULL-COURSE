@@ -1,62 +1,55 @@
 //Defining Member Function Outside The class
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-class emp {
-    string name;
-    int eid;
-    float Basic;
+class Employee {
+private:
+    string Employee_name;
+    float Basic_salary;
+    int Employee_Id;
+    float DA, HRA, Gross_salary;
 
 public:
-    void input(string n, int id, float b);         // Declaration only
-    void output();                                 // Declaration only
-    float grossSal(float DA, float HRA);           // Declaration only
+    void setDetails(string name, int id, float salary); // only declaration
+    void output(); // only declaration
 };
 
-// Define input() outside class
-void emp::input(string n, int id, float b) {
-    name = n;
-    eid = id;
-    Basic = b;
+// Definition of setDetails() outside class
+void Employee::setDetails(string name, int id, float salary) {
+    Employee_name = name;
+    Employee_Id = id;
+    Basic_salary = salary;
+
+    // Calculate allowances and gross salary
+    DA = 0.50f * Basic_salary;
+    HRA = 0.15f * Basic_salary;
+    Gross_salary = Basic_salary + HRA + DA;
 }
 
-// Define output() outside class
-void emp::output() {
-    cout << "Name: " << name << "\nEID: " << eid << "\nBasic: " << Basic << endl;
-}
-
-// Define grossSal() outside class
-float emp::grossSal(float DA, float HRA) {
-    float gross;
-    gross = Basic + DA + HRA;
-    return gross;
+// Definition of output() outside class
+void Employee::output() {
+    cout << "\n--- Employee Details ---" << endl;
+    cout << "Name: " << Employee_name << endl;
+    cout << "ID: " << Employee_Id << endl;
+    cout << "Basic Salary: " << Basic_salary << endl;
+    cout << "DA: " << DA << endl;
+    cout << "HRA: " << HRA << endl;
+    cout << "Gross Salary: " << Gross_salary << endl;
 }
 
 int main() {
-    emp e1;
+    Employee e1, e2, e3;
 
-    // You can take input from user or assign directly
-    string name;
-    int id;
-    float basic;
+    // Passing arguments
+    e1.setDetails("Rahul", 101, 30000);
+    e2.setDetails("Neha", 102, 40000);
+    e3.setDetails("Amit", 103, 50000);
 
-    cout << "Enter Name, ID and Basic Salary: ";
-    cin >> name >> id >> basic;
-
-    // Pass arguments to input()
-    e1.input(name, id, basic);
-
-    // Display employee details
     e1.output();
-
-    // Calculate DA and HRA
-    float DA = basic * 0.5;
-    float HRA = basic * 0.15;
-
-    // Get gross salary
-    float g = e1.grossSal(DA, HRA);
-    cout << "Gross Salary: " << g << endl;
+    e2.output();
+    e3.output();
 
     return 0;
 }
