@@ -1,66 +1,41 @@
 //Addition Of Two Different Class Using Friend CLass
 
-#include <iostream>
+##include <iostream>
 using namespace std;
 
-class ClassB; // Forward declaration
+// Forward declaration
+class ClassB;
 
 class ClassA {
-    int numA;
-
+    int num1;
 public:
-    void setData(int a) {
-        numA = a;
-    }
-
-    // Declare Adder as a friend
-    friend class Adder;
+    ClassA(int n) { num1 = n; }
+    // Declare friend class
+    friend class AddNumbers;
 };
 
 class ClassB {
-    int numB;
-
+    int num2;
 public:
-    void setData(int b) {
-        numB = b;
-    }
-
-    // Declare Adder as a friend
-    friend class Adder;
+    ClassB(int n) { num2 = n; }
+    // Declare friend class
+    friend class AddNumbers;
 };
 
-// Friend class that adds data from ClassA and ClassB
-class Adder {
+// Friend class
+class AddNumbers {
 public:
-    void add(ClassA objA, ClassB objB) {
-        int result = objA.numA + objB.numB;
-        cout << "Addition: " << result << endl;
+    void add(ClassA a, ClassB b) {
+        cout << "Sum = " << (a.num1 + b.num2) << endl;
     }
 };
 
 int main() {
-    ClassA a;
-    ClassB b;
-    Adder addObj;
+    ClassA obj1(10);
+    ClassB obj2(20);
 
-    a.setData(10);  // Set value in ClassA
-    b.setData(20);  // Set value in ClassB
-
-    addObj.add(a, b); // Add values using Adder class
+    AddNumbers adder;
+    adder.add(obj1, obj2);
 
     return 0;
-}
-
-//1. Two classes:
-// ClassA has an integer numA.
-// ClassB has an integer numB.
-
-//2. Setting values:
-// setData() functions set values for each class.
-
-//3. Friend class:
-// Adder is declared as a friend in both ClassA and ClassB.
-// This gives Adder permission to access the private data (numA and numB).
-
-//4. Adding values:
-// The add() function in Adder adds numA + numB and prints the result.
+} Adder adds numA + numB and prints the result.
