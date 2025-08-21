@@ -1,49 +1,52 @@
 //Defining Class Members By passing argument
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-class emp {
-    string name;
-    int eid;
-    float Basic;
+class Employee {
+private:
+    string Employee_name;
+    float Basic_salary;
+    int Employee_Id;
+    float DA, HRA, Gross_salary;
 
 public:
-    // Member function with arguments
-    void input(string n, int id, float b) {
-        name = n;
-        eid = id;
-        Basic = b;
+    // Function to set employee details through arguments
+    void setDetails(string name, int id, float salary) {
+        Employee_name = name;
+        Employee_Id = id;
+        Basic_salary = salary;
+
+        // Calculate allowances and gross salary
+        DA = 0.50f * Basic_salary;
+        HRA = 0.15f * Basic_salary;
+        Gross_salary = Basic_salary + HRA + DA;
     }
 
     void output() {
-        cout << "Name: " << name << "\nEID: " << eid << "\nBasic: " << Basic << endl;
-    }
-
-    float grossSal(float DA, float HRA) {
-        float gross;
-        gross = Basic + DA + HRA;
-        return gross;
+        cout << "\n--- Employee Details ---" << endl;
+        cout << "Name: " << Employee_name << endl;
+        cout << "ID: " << Employee_Id << endl;
+        cout << "Basic Salary: " << Basic_salary << endl;
+        cout << "DA: " << DA << endl;
+        cout << "HRA: " << HRA << endl;
+        cout << "Gross Salary: " << Gross_salary << endl;
     }
 };
 
 int main() {
-    emp e1;
-    
-    // Pass arguments to input() function
-    string name = "Rahul";
-    int id = 101;
-    float basic = 10000;
-    e1.input(name, id, basic);
+    Employee e1, e2, e3;
 
+    // Passing arguments instead of taking input inside class
+    e1.setDetails("Rahul", 101, 30000);
+    e2.setDetails("Neha", 102, 40000);
+    e3.setDetails("Amit", 103, 50000);
+
+    // Display employee details
     e1.output();
-
-    // You can calculate DA and HRA outside and pass to grossSal()
-    float DA = basic * 0.5;
-    float HRA = basic * 0.15;
-
-    float g = e1.grossSal(DA, HRA);
-    cout << "Gross Salary: " << g << endl;
+    e2.output();
+    e3.output();
 
     return 0;
 }
