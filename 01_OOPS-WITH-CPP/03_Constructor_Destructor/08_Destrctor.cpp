@@ -1,40 +1,32 @@
-//Syntax:
-// class name
-// {
-//     // body of class
-//     // destructor
-//     ~class name()
-//     {
-//         // body of destructor
-//     }
-// };
-
-//Example: 
 #include <iostream>
 using namespace std;
 
 class A {
-    int *x;
+    int *x;   // pointer
+
 public:
-    // Dynamic constructor
-    A(int x1) {
-        x = new int(x1);
+    // Constructor
+    A(int n) {
+        x = new int(n);  // dynamic memory
+        cout << "Constructor called\n";
     }
 
     // Destructor
     ~A() {
-        delete x;  // free allocated memory
-        cout << "Memory freed\n";
+        delete x;        // free memory
+        cout << "Destructor called, memory freed\n";
     }
 
-    void output() {
-        cout << *x << endl;
+    void show() {
+        cout << "Value = " << *x << endl;
     }
 };
 
 int main() {
-    A a1(5);
-    a1.output();  // prints 5
-} // destructor automatically called here → memory freed
+    A obj(5);   // constructor runs
+    obj.show(); // prints value
+} // destructor runs automatically here
 
-
+// Constructor called
+// Value = 5
+// Destructor called, memory freed
