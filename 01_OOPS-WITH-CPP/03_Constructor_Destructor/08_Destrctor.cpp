@@ -5,15 +5,15 @@ class A {
     int *x;   // pointer
 
 public:
-    // Constructor
-    A(int n) {
-        x = new int(n);  // dynamic memory
+    // Default Constructor (no arguments)
+    A() {
+        x = new int(10);   // allocate memory with default value (say 10)
         cout << "Constructor called\n";
     }
 
     // Destructor
     ~A() {
-        delete x;        // free memory
+        delete x;          // free memory
         cout << "Destructor called, memory freed\n";
     }
 
@@ -23,10 +23,6 @@ public:
 };
 
 int main() {
-    A obj(5);   // constructor runs
+    A obj;      // constructor runs without passing argument
     obj.show(); // prints value
-} // destructor runs automatically here
-
-// Constructor called
-// Value = 5
-// Destructor called, memory freed
+} // destructor runs automatically

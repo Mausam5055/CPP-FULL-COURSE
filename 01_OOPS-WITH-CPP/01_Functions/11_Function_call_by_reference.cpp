@@ -20,10 +20,10 @@ int main() {
     return 0;
 }
 
-After swap: x = 20, y = 10
-📉 Disadvantage (Memory):
-Very efficient: no copy, no extra memory.
+// After swap: x = 20, y = 10
+// 📉 Disadvantage (Memory):
+// Very efficient: no copy, no extra memory.
 
-But can be dangerous if used incorrectly, since original data is directly affected.
+// But can be dangerous if used incorrectly, since original data is directly affected.
 
-Only available in C++, not in C.
+// Only available in C++, not in C.
