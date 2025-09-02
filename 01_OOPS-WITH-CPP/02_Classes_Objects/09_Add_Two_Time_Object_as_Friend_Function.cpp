@@ -51,4 +51,18 @@ int main() {
 
     // Set times
     t1.input(2, 45, 50);  // 2:45:50
+    t2.input(3, 30, 20);  // 3:30:20
+
+    // Add the times
+    result = addTime(t1, t2);
+
+    // Display the times
+    cout << "Time 1: ";
+    t1.display();
+    cout << "Time 2: ";
+    t2.display();
+    cout << "Total Time: ";
+    result.display();
+
+    return 0;
 }
