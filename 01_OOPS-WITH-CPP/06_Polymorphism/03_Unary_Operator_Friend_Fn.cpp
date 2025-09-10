@@ -1,10 +1,13 @@
+#include <iostream>
+using namespace std;
+
 // As a Friend Function
 // Unary operator → one argument
 // Binary operator → two arguments
 
 // ✅ Syntax:
 
-friend return_type operator <symbol>(class_name obj);
+// friend return_type operator <symbol>(class_name obj);
 
 //Example: 
 

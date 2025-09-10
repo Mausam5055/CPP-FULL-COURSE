@@ -1,3 +1,5 @@
+//Adding Two Complexc Numbers Using Unary ++ Operator Overloading as Member Function
+
 // Definition
 // 👉 Operator overloading means giving a new meaning to an existing operator so that it
 // can also work with user-defined data types in the same way as it works with built-in 
@@ -14,11 +16,13 @@
                 // Unary operator → zero arguments
                 // Binary operator → one argument
 
-// ✅ Syntax:
+#include <iostream>
+using namespace std;
 
-return_type operator <symbol>() {
-    // Operator logic
-}
+// ✅ Syntax:
+// return_type operator <symbol>() {
+//     // Operator logic
+// }
 
 // ✅ Example:
 
@@ -29,8 +33,9 @@ public:
     A(int x) { n = x; }
 
     // Overloading ++
-    void operator ++ () {
+    A& operator ++ () {
         n++;
+        return *this;
     }
 
     void display() {
